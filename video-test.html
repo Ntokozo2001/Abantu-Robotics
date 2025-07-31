@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+        }
+        
+        .test-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        
+        .content {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+        }
+        
+        .status {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #5855eb;
+        }
+        
+        #log {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="video-background">
+            <video id="testVideo" autoplay muted loop playsinline>
+                <source src="vidoe.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-overlay"></div>
+        
+        <div class="content">
+            <div class="status">
+                <h1>Video Background Test</h1>
+                <p id="videoStatus">Testing video background...</p>
+                <button onclick="playVideo()">Force Play Video</button>
+                <button onclick="checkVideoFiles()">Check Video Files</button>
+                <button onclick="clearLog()">Clear Log</button>
+            </div>
+            
+            <div id="log"></div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('testVideo');
+        const statusEl = document.getElementById('videoStatus');
+        const logEl = document.getElementById('log');
+        
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            logEl.innerHTML += `[${timestamp}] ${message}<br>`;
+            logEl.scrollTop = logEl.scrollHeight;
+            console.log(message);
+        }
+        
+        function updateStatus(message) {
+            statusEl.textContent = message;
+            log(message);
+        }
+        
+        // Video event listeners
+        video.addEventListener('loadstart', () => log('Video loading started'));
+        video.addEventListener('loadedmetadata', () => log('Video metadata loaded'));
+        video.addEventListener('loadeddata', () => {
+            log('Video data loaded successfully');
+            updateStatus('Video loaded and ready!');
+        });
+        video.addEventListener('canplay', () => log('Video can start playing'));
+        video.addEventListener('canplaythrough', () => log('Video can play through without buffering'));
+        video.addEventListener('playing', () => {
+            log('Video is playing');
+            updateStatus('Video is playing successfully!');
+        });
+        video.addEventListener('pause', () => log('Video paused'));
+        video.addEventListener('ended', () => log('Video ended'));
+        video.addEventListener('error', (e) => {
+            log(`Video error: ${e.message || 'Unknown error'}`);
+            updateStatus('Video failed to load');
+        });
+        
+        // Check if video files exist
+        function checkVideoFiles() {
+            const sources = ['vidoe.mp4', 'video1.mp4'];
+            sources.forEach(src => {
+                fetch(src, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            log(`✓ ${src} exists and is accessible`);
+                        } else {
+                            log(`✗ ${src} returned status: ${response.status}`);
+                        }
+                    })
+                    .catch(error => {
+                        log(`✗ ${src} failed to load: ${error.message}`);
+                    });
+            });
+        }
+        
+        function playVideo() {
+            log('Attempting to play video manually...');
+            video.play()
+                .then(() => {
+                    log('Video play successful');
+                    updateStatus('Video playing manually!');
+                })
+                .catch(error => {
+                    log(`Video play failed: ${error.message}`);
+                    updateStatus('Manual play failed');
+                });
+        }
+        
+        function clearLog() {
+            logEl.innerHTML = '';
+        }
+        
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Page loaded, initializing video test...');
+            checkVideoFiles();
+            
+            // Try to play video
+            setTimeout(() => {
+                video.play()
+                    .then(() => log('Autoplay successful'))
+                    .catch(error => {
+                        log(`Autoplay prevented: ${error.message}`);
+                        updateStatus('Autoplay blocked - click "Force Play Video"');
+                    });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

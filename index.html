@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abantu Robotics - Robotics for Everyone</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Abantu Robotics Logo" loading="eager">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="video-background">
+            <video autoplay muted loop playsinline preload="auto" id="heroVideo" disablePictureInPicture>
+                <source src="video.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/mp4">
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+        </div> <!-- Add this closing div tag -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Abantu Robotics</h1>
+                <p class="hero-subtitle">Empowering the next generation through innovative STEM education and hands-on robotics learning experiences.</p>
+                <div class="hero-buttons">
+                    <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="robot-animation">
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <!-- Parallax Background -->
+        <div class="parallax-bg">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Hero Intro -->
+            <div class="about-hero">
+                <div class="about-hero-content">
+                    <h2 class="about-title">
+                        <span class="title-word" data-animate="slide-up">Empowering</span>
+                        <span class="title-word" data-animate="slide-up">Tomorrow's</span>
+                        <span class="title-word gradient-text" data-animate="slide-up">Innovators</span>
+                    </h2>
+                    <p class="about-subtitle" data-animate="fade-up">Where curiosity meets technology and dreams become reality</p>
+                </div>
+                <div class="about-hero-visual">
+                    <div class="robot-ecosystem">
+                        <div class="central-robot">
+                            <i class="fas fa-robot"></i>
+                            <div class="robot-pulse"></div>
+                        </div>
+                        <div class="orbit-ring orbit-1">
+                            <div class="orbit-item"><i class="fas fa-microchip"></i></div>
+                            <div class="orbit-item"><i class="fas fa-code"></i></div>
+                            <div class="orbit-item"><i class="fas fa-brain"></i></div>
+                        </div>
+                        <div class="orbit-ring orbit-2">
+                            <div class="orbit-item"><i class="fas fa-cogs"></i></div>
+                            <div class="orbit-item"><i class="fas fa-rocket"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Timeline -->
+            <div class="story-section" data-animate="fade-up">
+                <h3 class="section-title">Our Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item" data-animate="slide-left">
+                        <div class="timeline-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>The Spark</h4>
+                            <p>Founded with a vision to make robotics education accessible to every student, regardless of background or experience.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-animate="slide-right">
+                        <div class="timeline-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Building Community</h4>
+                            <p>Partnered with schools and communities to create inclusive learning environments where innovation thrives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-animate="slide-left">
+                        <div class="timeline-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Celebrating Success</h4>
+                            <p>Watching our students excel in competitions and pursue STEM careers, validating our educational approach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="mission-vision-grid" data-animate="fade-up">
+                <div class="mission-card interactive-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>To democratize robotics education by providing engaging, hands-on learning experiences that inspire creativity, critical thinking, and problem-solving skills in every student.</p>
+                        <div class="card-highlight">
+                            <span>Accessible • Engaging • Transformative</span>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <div class="vision-card interactive-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>A world where every student has the opportunity to explore, create, and innovate through robotics, building the next generation of problem solvers and innovators.</p>
+                        <div class="card-highlight">
+                            <span>Inclusive • Innovative • Inspiring</span>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+
+            <!-- What Makes Us Different -->
+            <div class="differentiators-section" data-animate="fade-up">
+                <h3 class="section-title">What Makes Us Different</h3>
+                <div class="differentiators-grid">
+                    <div class="diff-card" data-animate="zoom-in">
+                        <div class="diff-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Expert-Led Curriculum</h4>
+                        <p>Programs designed by education specialists and industry professionals</p>
+                        <div class="diff-stat">95% Success Rate</div>
+                    </div>
+                    
+                    <div class="diff-card" data-animate="zoom-in">
+                        <div class="diff-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Hands-On Learning</h4>
+                        <p>Real robots, real projects, real-world problem solving</p>
+                        <div class="diff-stat">100% Practical</div>
+                    </div>
+                    
+                    <div class="diff-card" data-animate="zoom-in">
+                        <div class="diff-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Inclusive Environment</h4>
+                        <p>Welcoming space for learners of all backgrounds and abilities</p>
+                        <div class="diff-stat">Everyone Belongs</div>
+                    </div>
+                    
+                    <div class="diff-card" data-animate="zoom-in">
+                        <div class="diff-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>Competition Ready</h4>
+                        <p>Preparing students for robotics competitions and STEM careers</p>
+                        <div class="diff-stat">Award Winners</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Dashboard -->
+            <div class="impact-dashboard" data-animate="fade-up">
+                <h3 class="section-title">Our Growing Impact</h3>
+                <div class="dashboard-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="impact-number" data-target="500">0</div>
+                        <div class="impact-label">Students Inspired</div>
+                        <div class="impact-growth">+25% this year</div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="impact-number" data-target="25">0</div>
+                        <div class="impact-label">Partner Schools</div>
+                        <div class="impact-growth">+40% growth</div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="impact-number" data-target="15">0</div>
+                        <div class="impact-label">Competition Wins</div>
+                        <div class="impact-growth">Regional champs</div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="impact-number" data-target="98">0</div>
+                        <div class="impact-label">% Satisfaction</div>
+                        <div class="impact-growth">Student & parent rated</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="about-cta" data-animate="fade-up">
+                <div class="cta-content">
+                    <h3>Ready to Start Your Robotics Journey?</h3>
+                    <p>Join hundreds of students who are already building the future, one robot at a time.</p>
+                    <div class="cta-buttons">
+                        <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                        <a href="#contact" class="btn btn-secondary">Schedule a Visit</a>
+                    </div>
+                </div>
+                <div class="cta-visual">
+                    <div class="rotating-gear">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="floating-circuits">
+                        <div class="circuit circuit-1"></div>
+                        <div class="circuit circuit-2"></div>
+                        <div class="circuit circuit-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Programs</h2>
+                <p>Tailored Learning Experiences for Every Age Group</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Young Explorers (Ages 6-10)</h3>
+                    <p>Introduction to robotics through fun, interactive activities and simple programming concepts using visual coding platforms.</p>
+                    <ul>
+                        <li>Basic robot construction</li>
+                        <li>Visual programming</li>
+                        <li>Problem-solving games</li>
+                        <li>Teamwork activities</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Creators (Ages 11-14)</h3>
+                    <p>Intermediate robotics with text-based programming, sensor integration, and autonomous robot challenges.</p>
+                    <ul>
+                        <li>Python programming</li>
+                        <li>Sensor integration</li>
+                        <li>Autonomous navigation</li>
+                        <li>Competition preparation</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Tech Innovators (Ages 15+)</h3>
+                    <p>Advanced robotics covering AI, machine learning, advanced sensors, and real-world application development.</p>
+                    <ul>
+                        <li>AI and machine learning</li>
+                        <li>Advanced programming</li>
+                        <li>Project-based learning</li>
+                        <li>Industry applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>Passionate Educators and Technology Experts</p>
+            </div>
+            <div class="team-showcase">
+                <div class="team-member" data-role="lead">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="thelumusa.jpg" alt="Thelumusa Mthethwa" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3>Thelumusa Mthethwa</h3>
+                            <p class="member-role">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                Co-Founder
+                            </p>
+                            <p class="member-bio">Passionate about making STEM education accessible and engaging for all students. With years of experience in educational innovation.</p>
+                            <div class="member-skills">
+                                  <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Ntokozo2001" class="social-icon"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member" data-role="curriculum">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="amahle.jpg" alt="Amahle Makhoba" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3>Amahle Makhoba</h3>
+                            <p class="member-role">
+                                <i class="fas fa-book-open"></i>
+                                Co-Founder
+                            </p>
+                            <p class="member-bio">Expert in educational technology and innovative learning methodologies. Designs engaging curricula that inspire creativity.</p>
+                            <div class="member-skills">
+                                 <a href="http://www.linkedin.com/in/amahle-makhoba-2619112bb" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Makhoba-Amahle" class="social-icon"><i class="fab fa-github"></i></a>
+                                    <a href="mailto:amahlemakhoba23@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member" data-role="technical">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="ntokozopic.jpg" alt="Ntokozo Maseko" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3>Ntokozo Maseko</h3>
+                            <p class="member-role">
+                                <i class="fas fa-cogs"></i>
+                                Co-Founder
+                            </p>
+                            <p class="member-bio">Robotics engineer with expertise in programming and system design. Brings technical excellence to every project.</p>
+                            <div class="member-skills">
+                                <a href="https://www.linkedin.com/in/ntokozo-maseko-2456a521b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/Ntokozo2001" class="social-icon"><i class="fab fa-github"></i></a>
+                                    <a href="mailto:ntokozocmaseko@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member" data-role="operations">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="rolan.jpg" alt="Rolan Ablant" class="member-photo">
+                        </div>
+                        <div class="member-info">
+                            <h3>Rolan Ablant</h3>
+                            <p class="member-role">
+                                <i class="fas fa-clipboard-list"></i>
+                                Co-Founder
+                            </p>
+                            <p class="member-bio">Dedicated to creating exceptional learning experiences and program excellence. Ensures smooth operations and quality delivery.</p>
+                            <div class="member-skills">
+                                    <a href="https://www.linkedin.com/in/rolan-ablant-8bb193288/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/rolanablant" class="social-icon"><i class="fab fa-github"></i></a>
+                                    <a href="mailto:rolanablant@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to Start Your Robotics Journey?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>stembotics6@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>South Africa</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/stem_botics?igsh=OTd5cXhvMTN2OGxk&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/stem_botics?igsh=OTd5cXhvMTN2OGxk&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="program" name="program" required>
+                            <option value="">Select a Program</option>
+                            <option value="young-explorers">Young Explorers (Ages 6-10)</option>
+                            <option value="code-creators">Code Creators (Ages 11-14)</option>
+                            <option value="tech-innovators">Tech Innovators (Ages 15+)</option>
+                            <option value="custom">Custom Program</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tell us about your interest in our programs" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.jpg" alt="Abantu Robotics Logo" loading="lazy">
+                </div>
+                <p>&copy; 2025 Abantu Robotics. All rights reserved. Robotics for Everyone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
